@@ -47,7 +47,7 @@ export default class IndecisionApp extends React.Component {
         const json = localStorage.getItem('options');
         const options = JSON.parse(json);
 
-        this.setState(() => ({ options: options}))
+        options ? this.setState(() => ({ options: options})) : localStorage.setItem('options', '{}');
     }
     catch (e) {
         console.log(e);
